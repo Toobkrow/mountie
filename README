@@ -1,7 +1,7 @@
 # Copyright 2012 Daniel Anthofer
 # Modification and distribution under terms of
 # GNU GPL v. 3 is permitted
-# http://www.gnu.org/licenses/gpl-3.0.txtrg/licenses/gpl-3.0.txt
+# http://www.gnu.org/licenses/gpl-3.0.txt
 
 quickly mount and unmount usbsticks, external harddrives etc.
 
