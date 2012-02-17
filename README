@@ -7,6 +7,6 @@ quickly mount and unmount usbsticks, external harddrives etc.
 
 dependencies: python>=3, dbus-python>=1.0, udisks
 
-mountie shall become a small tool to extend the usability of
+mountie shall be a small tool to extend the usability of
 ranger file manager which lacks the possibility to mount
 filesystems

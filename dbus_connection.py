@@ -30,7 +30,7 @@ class FileSystemDevice:
 			raise TypeError('not a filesystem')
 		self.filesystemmethodsinterface = dbus.Interface(self.filesystemproxy, 'org.freedesktop.UDisks.Device')
 
-		self.devicefile = devicefilepath
+		self.devicefile = self.get_filesystem_property('org.freedesktop.UDisks.Device', 'DeviceFile')
 		self.fstype = self.get_filesystem_property('org.freedesktop.UDisks.Device', 'IdType')
 		self.label = self.get_filesystem_property('org.freedesktop.UDisks.Device', 'IdLabel')
 		self.size = self.get_filesystem_property('org.freedesktop.UDisks.Device', 'DeviceSize')

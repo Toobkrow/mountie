@@ -51,9 +51,9 @@ class Mountie:
 	def getStringList(self): # {{{
 		strlist = []
 		for device in self.devList:
-			txt = device.label + " " + device.devicefile
+			txt = device.label + "\t" + device.devicefile
 			if device.mounted():
-				txt += " " + device.mountpoint
+				txt += "\t" + device.mountpoint
 			strlist.append(txt)
 		return strlist
 	# }}}

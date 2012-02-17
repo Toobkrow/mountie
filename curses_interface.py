@@ -38,6 +38,7 @@ class CursesInterface:
 	# }}}
 
 	def end_interface(self): # {{{
+		self.stdscr.erase()
 		curses.curs_set(1)
 		curses.nocbreak()
 		curses.echo()
