@@ -16,7 +16,7 @@ class Mountie:
 			111 : self.openFilesystem, \
 			108 : self.openFilesystem \
 		}
-		self.helpstr = "up/down: k/j\tmount/unmount: m\topen: o/l\tquit: q"
+		self.helpstr = "up/down: k/j\tmount/unmount: m\topen: o/l\tquit: q/Esc"
 		self.cursesInterface = curses_interface.CursesInterface( \
 				self.comdict, self.getStringList(), self.helpstr)
 	# }}}
