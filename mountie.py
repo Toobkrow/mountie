@@ -58,5 +58,6 @@ class Mountie:
 		return strlist
 	# }}}
 
-mountie = Mountie()
-mountie.cursesInterface.start_interface()
+if __name__ == '__main__':
+	mountie = Mountie()
+	mountie.cursesInterface.start_interface()
