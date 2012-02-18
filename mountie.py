@@ -12,9 +12,9 @@ class Mountie:
 	def __init__(self): # {{{
 		self.devList = dbus_connection.createDevList()
 		self.comdict = { \
-			109 : self.toggleMounted, \
-			111 : self.openFilesystem, \
-			108 : self.openFilesystem \
+			'm' : self.toggleMounted, \
+			'o' : self.openFilesystem, \
+			'l' : self.openFilesystem \
 		}
 		self.helpstr = "up/down: k/j\tmount/unmount: m\topen: o/l\tquit: q/Esc"
 		self.cursesInterface = curses_interface.CursesInterface( \

@@ -69,15 +69,15 @@ class CursesInterface:
 
 			self.errortext = ''
 			c = self.stdscr.getch()
-			if c in self.comdict.keys(): 
-				self.errortext = self.comdict[c](self.cursorline - 1)
-			elif c == curses.KEY_UP or c == 107: #k
+			if chr(c) in self.comdict.keys(): 
+				self.errortext = self.comdict[chr(c)](self.cursorline - 1)
+			elif c == curses.KEY_UP or chr(c) == 'k':
 				if self.cursorline > 1:
 					self.cursorline -=1
-			elif c == curses.KEY_DOWN or c == 106: #j
+			elif c == curses.KEY_DOWN or chr(c) == 'j':
 				if self.cursorline < len(self.strlist):
 					self.cursorline +=1
-			elif c == 27 or c == 113: #ESC or q
+			elif c == 27 or chr(c) == 'q': #27=ESC
 				self.end_interface()
 				break 
 	# }}}
