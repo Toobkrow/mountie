@@ -8,13 +8,16 @@ import dbus_connection
 import os
 
 class Mountie:
-	
+
 	def __init__(self): # {{{
 		self.devList = dbus_connection.createDevList()
 		self.comdict = { \
 			'm' : self.toggleMounted, \
 			'o' : self.openFilesystem, \
-			'l' : self.openFilesystem \
+			'l' : self.openFilesystem, \
+			# 'ą' is equal to right arrow key
+			'ą' : self.openFilesystem, \
+			'\n' : self.openFilesystem \
 		}
 		self.helpstr = "up/down: k/j\tmount/unmount: m\topen: o/l\tquit: q/Esc"
 		self.cursesInterface = curses_interface.CursesInterface( \
@@ -27,7 +30,7 @@ class Mountie:
 				self.devList[index].unmount()
 			except:
 				return "error: unable to unmount: device may be busy"
-	
+
 		else:
 			try:
 				self.devList[index].mount()
@@ -47,7 +50,7 @@ class Mountie:
 			return "error: unable to mount"
 		return ""
 	# }}}
-	
+
 	def getStringList(self): # {{{
 		strlist = []
 		for device in self.devList:

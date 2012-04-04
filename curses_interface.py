@@ -39,6 +39,7 @@ class CursesInterface:
 
 	def end_interface(self): # {{{
 		self.stdscr.erase()
+		self.stdscr.refresh()
 		curses.curs_set(1)
 		curses.nocbreak()
 		curses.echo()
@@ -69,7 +70,7 @@ class CursesInterface:
 
 			self.errortext = ''
 			c = self.stdscr.getch()
-			if chr(c) in self.comdict.keys(): 
+			if chr(c) in self.comdict.keys():
 				self.errortext = self.comdict[chr(c)](self.cursorline - 1)
 			elif c == curses.KEY_UP or chr(c) == 'k':
 				if self.cursorline > 1:
@@ -79,7 +80,7 @@ class CursesInterface:
 					self.cursorline +=1
 			elif c == 27 or chr(c) == 'q': #27=ESC
 				self.end_interface()
-				break 
+				break
 	# }}}
 
 	def start_interface(self): # {{{
@@ -89,4 +90,4 @@ class CursesInterface:
 		self.stdscr.keypad(1)
 		curses.curs_set(0)
 		self.mainloop()
-	# }}} 
+	# }}}
